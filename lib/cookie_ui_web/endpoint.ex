@@ -1,4 +1,4 @@
-defmodule CookieUiWeb.Endpoint do
+defmodule CookieUIWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :cookie_ui
 
   # The session will be stored in the cookie and signed,
@@ -21,7 +21,7 @@ defmodule CookieUiWeb.Endpoint do
     at: "/",
     from: :cookie_ui,
     gzip: false,
-    only: CookieUiWeb.static_paths()
+    only: CookieUIWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -46,5 +46,5 @@ defmodule CookieUiWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug CookieUiWeb.Router
+  plug CookieUIWeb.Router
 end

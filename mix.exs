@@ -1,4 +1,4 @@
-defmodule CookieUi.MixProject do
+defmodule CookieUI.MixProject do
   use Mix.Project
 
   def project do
@@ -18,7 +18,7 @@ defmodule CookieUi.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {CookieUi.Application, []},
+      mod: {CookieUI.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

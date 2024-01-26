@@ -1,5 +1,5 @@
-defmodule CookieUiWeb.PageControllerTest do
-  use CookieUiWeb.ConnCase
+defmodule CookieUIWeb.PageControllerTest do
+  use CookieUIWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

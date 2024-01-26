@@ -1,5 +1,5 @@
-defmodule CookieUiWeb.PageController do
-  use CookieUiWeb, :controller
+defmodule CookieUIWeb.PageController do
+  use CookieUIWeb, :controller
 
   def home(conn, _params) do
     # The home page is often custom made,

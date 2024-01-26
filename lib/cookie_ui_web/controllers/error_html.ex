@@ -1,5 +1,5 @@
-defmodule CookieUiWeb.ErrorHTML do
-  use CookieUiWeb, :html
+defmodule CookieUIWeb.ErrorHTML do
+  use CookieUIWeb, :html
 
   # If you want to customize your error pages,
   # uncomment the embed_templates/1 call below

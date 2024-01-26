@@ -11,14 +11,14 @@ config :cookie_ui,
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :cookie_ui, CookieUiWeb.Endpoint,
+config :cookie_ui, CookieUIWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Phoenix.Endpoint.Cowboy2Adapter,
   render_errors: [
-    formats: [html: CookieUiWeb.ErrorHTML, json: CookieUiWeb.ErrorJSON],
+    formats: [html: CookieUIWeb.ErrorHTML, json: CookieUIWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: CookieUi.PubSub,
+  pubsub_server: CookieUI.PubSub,
   live_view: [signing_salt: "m0iEX2gC"]
 
 # Configures the mailer
@@ -28,7 +28,7 @@ config :cookie_ui, CookieUiWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :cookie_ui, CookieUi.Mailer, adapter: Swoosh.Adapters.Local
+config :cookie_ui, CookieUI.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,

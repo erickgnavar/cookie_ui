@@ -1,4 +1,4 @@
-# CookieUi
+# CookieUI
 
 To start your Phoenix server:
 

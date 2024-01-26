@@ -1,12 +1,12 @@
-defmodule CookieUiWeb do
+defmodule CookieUIWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use CookieUiWeb, :controller
-      use CookieUiWeb, :html
+      use CookieUIWeb, :controller
+      use CookieUIWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule CookieUiWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: CookieUiWeb.Layouts]
+        layouts: [html: CookieUIWeb.Layouts]
 
       import Plug.Conn
-      import CookieUiWeb.Gettext
+      import CookieUIWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule CookieUiWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {CookieUiWeb.Layouts, :app}
+        layout: {CookieUIWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -84,8 +84,8 @@ defmodule CookieUiWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import CookieUiWeb.CoreComponents
-      import CookieUiWeb.Gettext
+      import CookieUIWeb.CoreComponents
+      import CookieUIWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -98,9 +98,9 @@ defmodule CookieUiWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: CookieUiWeb.Endpoint,
-        router: CookieUiWeb.Router,
-        statics: CookieUiWeb.static_paths()
+        endpoint: CookieUIWeb.Endpoint,
+        router: CookieUIWeb.Router,
+        statics: CookieUIWeb.static_paths()
     end
   end
 

@@ -6,7 +6,7 @@ import Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :cookie_ui, CookieUiWeb.Endpoint,
+config :cookie_ui, CookieUIWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -43,7 +43,7 @@ config :cookie_ui, CookieUiWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :cookie_ui, CookieUiWeb.Endpoint,
+config :cookie_ui, CookieUIWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",

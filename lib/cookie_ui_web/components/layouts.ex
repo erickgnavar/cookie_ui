@@ -1,5 +1,5 @@
-defmodule CookieUiWeb.Layouts do
-  use CookieUiWeb, :html
+defmodule CookieUIWeb.Layouts do
+  use CookieUIWeb, :html
 
   embed_templates "layouts/*"
 end

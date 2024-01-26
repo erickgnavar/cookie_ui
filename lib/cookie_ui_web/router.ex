@@ -1,11 +1,11 @@
-defmodule CookieUiWeb.Router do
-  use CookieUiWeb, :router
+defmodule CookieUIWeb.Router do
+  use CookieUIWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, html: {CookieUiWeb.Layouts, :root}
+    plug :put_root_layout, html: {CookieUIWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,14 +14,14 @@ defmodule CookieUiWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", CookieUiWeb do
+  scope "/", CookieUIWeb do
     pipe_through :browser
 
     get "/", PageController, :home
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", CookieUiWeb do
+  # scope "/api", CookieUIWeb do
   #   pipe_through :api
   # end
 
@@ -37,7 +37,7 @@ defmodule CookieUiWeb.Router do
     scope "/dev" do
       pipe_through :browser
 
-      live_dashboard "/dashboard", metrics: CookieUiWeb.Telemetry
+      live_dashboard "/dashboard", metrics: CookieUIWeb.Telemetry
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
   end
