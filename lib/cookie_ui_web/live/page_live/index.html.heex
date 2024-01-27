@@ -1,0 +1,43 @@
+<%= if @step == :initial do %>
+  <h2 class="text-center">Enter your cookicutter git repo</h2>
+<% else %>
+  <h2>Working on <code><%= @repo_url %></code></h2>
+<% end %>
+
+<%= if @step == :initial do %>
+  <.simple_form for={@form} phx-change="validate" phx-submit="process">
+    <.input field={@form[:url]} />
+    <:actions>
+      <.button>Analyze</.button>
+    </:actions>
+  </.simple_form>
+<% end %>
+
+<%= if @step == :filling do %>
+  <.simple_form for={@cookie_form} phx-change="validate2" phx-submit="generate">
+    <%= for {field_name, _value} <- @cookie_form.params do %>
+      <.input
+        field={@cookie_form[String.to_atom(field_name)]}
+        label={String.capitalize(field_name)}
+      />
+    <% end %>
+    <:actions>
+      <.button>Execute</.button>
+    </:actions>
+  </.simple_form>
+<% end %>
+
+<%= if @step == :done do %>
+  <br />
+  <a
+    href={~p"/download/#{@download_name}"}
+    target="_blank"
+    class="phx-submit-loading:opacity-75 rounded-lg bg-zinc-900 hover:bg-zinc-700 py-2 px-3 text-sm font-semibold leading-6 text-white active:text-white/80"
+  >
+    Download
+  </a>
+<% end %>
+
+<pre>
+  <%= @stream %>
+</pre>

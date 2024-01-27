@@ -17,7 +17,8 @@ defmodule CookieUIWeb.Router do
   scope "/", CookieUIWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", PageLive.Index, :index
+    get "/download/:file", PageController, :download
   end
 
   # Other scopes may use custom stacks.
