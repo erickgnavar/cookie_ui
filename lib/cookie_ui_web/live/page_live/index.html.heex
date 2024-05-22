@@ -15,10 +15,18 @@
 
 <%= if @step == :filling do %>
   <.simple_form for={@cookie_form} phx-change="validate2" phx-submit="generate">
-    <%= for {field_name, _value} <- @cookie_form.params do %>
+    <%= for {field_name, value} <- @cookie_form.params do %>
       <.input
+        :if={is_binary(value)}
         field={@cookie_form[String.to_atom(field_name)]}
         label={String.capitalize(field_name)}
+      />
+      <.input
+        :if={is_list(value)}
+        label={String.capitalize(field_name)}
+        type="select"
+        field={@cookie_form[String.to_atom(field_name)]}
+        options={Enum.map(value, &{&1, &1})}
       />
     <% end %>
     <:actions>

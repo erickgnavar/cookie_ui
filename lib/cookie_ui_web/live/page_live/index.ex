@@ -92,9 +92,7 @@ defmodule CookieUIWeb.PageLive.Index do
       parsed_json
       |> Enum.map(fn {key, value} ->
         if is_list(value) do
-          # ignore by now choices options
-          # TODO: remove this and generate selects
-          {key, hd(value)}
+          {key, value}
         else
           {key, value}
         end
